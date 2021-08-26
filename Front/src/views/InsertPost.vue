@@ -3,12 +3,12 @@
   
   <div id="container">
     <h2>Seu Post:</h2>
-    Texto: <input type="text" class="inputs_form" name="" id="textInput" v-model="text"/> <br/><br/>
-    Data: <input type="text" class="inputs_form" name="" id="2" v-model="date"><br/><br/>
-    Horário: <input type="text" class="inputs_form" name="" id="3" v-model="time"/><br/><br/>
+    <input type="text" class="inputs_form" id="textInput" v-model="text" placeholder="O que anda pensando?"/> <br/><br/>
+    <input type="text" class="inputs_form" id="2" v-model="date" placeholder="Data"><br/><br/>
+    <input type="text" class="inputs_form"  id="3" v-model="time" placeholder="Horário"/><br/><br/>
     Imagem: <input type="file" id="file" ref="file" name="image" /> <br /><br />
 
-    <button @click="inserirPosts">Inserir</button> <br /><br />
+    <button @click="inserirPosts" id="buttonPostar">Postar</button> <br /><br />
 
   </div>
 
@@ -91,15 +91,21 @@ export default {
 </script>
 
 <style>
-#textInput {
-  width: 1000px;
+h2{
+  background-color: transparent;
+  margin-top: 0em;
+  padding: 4%;
 }
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#buttonPostar{
+  background-color: rgb(156, 255, 117);
+  transition: background-color 0.2s;
+}
+#buttonPostar:hover{
+  transition: background-color 0.2s;
+  transition: color 0.2s;
+  background-color: rgb(122, 255, 70);
+}
+.input_form{
+  width: 100px;
 }
 </style>

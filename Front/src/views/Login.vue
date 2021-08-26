@@ -2,8 +2,8 @@
   <div id="container">
     
     <div id="inputs">
-      <input type="text" id="1" v-model="login" placeholder="Usuário"/> <br />
-      <input type="password" name="" id="2" v-model="password" placeholder="Senha"/> <br />
+      <input type="text"     id="inputs_login" v-model="login"    placeholder="Usuário"/> <br />
+      <input type="password" id="inputs_login" v-model="password" placeholder="Senha"/> <br />
     </div>
 
     <button @click="logar" id="buttonLogar">Entrar</button>
@@ -57,7 +57,7 @@ export default {
  background-color: rgb(236, 236, 236);
 }
 #container{
-    width: 350px;
+  width: 350px;
   height: 300px;
   
   border-radius: 7px;
@@ -69,7 +69,7 @@ export default {
 
   background-color: rgb(255, 255, 255);
 }
-input{
+#inputs_login{
   width: 200px;
   height: 27px;
   font-size: 16px;
@@ -85,15 +85,15 @@ input{
   margin-top: 2em;
   
 }
-input:hover{
+#inputs_loginput:hover{
   outline: none;
   border-bottom:3px solid #399c48;
 }
-input:focus{
+#inputs_login:focus{
   outline: none;
   border-bottom:3px solid #399c48;
 }
-input::placeholder{
+#inputs_login ::placeholder{
  color:rgba(0, 66, 0, 0.507);
 }
 #inputs{
