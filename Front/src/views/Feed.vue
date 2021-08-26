@@ -8,19 +8,28 @@
     Comentar: <input type="text" class="inputs_form" name="" id="1" v-model="post_coment"/> <br/>
     Id do post: <input type="text" class="inputs_form" name="" id="0" v-model="id"/> <br/>
     <button @click="inserirComent">Inserir</button><br/><br/><br/>
-    <button @click="fetchComents">Buscar Coments</button> <br/><br/>
 
-    <button @click="fetchPosts">Buscar Todos</button> <br/><br/>
+    <div>{{fetchComents()}}</div>
+    <div>{{fetchPosts()}}</div>
 
     <ul>
       <li v-for="post in posts" :key="post.id">
+        <div>{{fetchByIdPosts()}}</div>
         Texto: {{ post.text }} <br/>
         Data: {{ post.date }} <br/>
         Horário: {{ post.time }} <br/>
+        <img
+          v-if="post.id"
+          :src="'http://localhost:3000/uploads/posts/' + post.id + '?' + Math.random()"
+          width="200"
+          height="150"
+          alt="Nada"
+          srcset=""
+        />
         <ul>
-            <li v-for="coment in coments" :key="coment.postId">
+            <li v-for="coment in coments" :key="coment.id">
               <div v-if="coment.postId === post.id">
-                Comentário: {{ coment.post_coment }} <br/><br/> 
+                Comentário: {{ coment.post_coment }} <br/> 
               </div> 
             </li>
         </ul>
@@ -41,6 +50,7 @@ export default {
   data() {
     return {
       id: "",
+      userId: "",
       text: "",
       date: "",
       time: "",
@@ -50,6 +60,7 @@ export default {
       post: "",
       baseURI: "http://localhost:3000/posts",
       baseComents: "http://localhost:3000/coments",
+      baseUpload: "http://localhost:3000/upload",
     };
   },
   methods: {
@@ -60,7 +71,7 @@ export default {
       });
     },
     fetchByIdPosts: function() {
-      axios.get(this.baseURI + "/" + this.id).then((result) => {
+      axios.get(this.baseURI + "/" + this.post.id).then((result) => {
         console.log(result);
         this.post = result.data;
       });
@@ -104,4 +115,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+ul {
+  list-style-type: none;
+}
 </style>
+
+

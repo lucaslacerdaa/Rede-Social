@@ -1,9 +1,9 @@
 <template>
   <div id="nav">
-    <router-link v-if="logged === false" to="/">Login <br></router-link>
-    <router-link v-if="logged" to="/insertPost"> Inserir Post </router-link>
-    <router-link v-if="logged" to="/feed"> || Feed </router-link>
-    <a v-if="logged" href="#" @click="logout"> || Logout <br><br></a>
+    <router-link to="/"> Inserir Post || </router-link>
+    <router-link to="/feed"> Feed </router-link> 
+    <!--<router-link v-else to="/">Login <br></router-link>
+    <a v-if="logged" href="#" @click="logout"> Logout <br><br></a>--> 
     <router-view />
   </div>
 </template>

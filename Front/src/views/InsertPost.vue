@@ -6,8 +6,9 @@
     Texto: <input type="text" class="inputs_form" name="" id="textInput" v-model="text"/> <br/><br/>
     Data: <input type="text" class="inputs_form" name="" id="2" v-model="date"><br/><br/>
     Horário: <input type="text" class="inputs_form" name="" id="3" v-model="time"/><br/><br/>
+    Imagem: <input type="file" id="file" ref="file" name="image" /> <br /><br />
 
-    <button @click="inserirPosts">Inserir</button> 
+    <button @click="inserirPosts">Inserir</button> <br /><br />
 
   </div>
 
@@ -21,15 +22,42 @@ export default {
   data() {
     return {
       id: "",
+      userId: "",
       text: "",
       date: "",
       time: "",
       posts: [],
       post: "",
       baseURI: "http://localhost:3000/posts",
+      baseUpload: "http://localhost:3000/upload",
     };
   },
   methods: {
+    handleFileUpload(id) {
+      this.file = this.$refs.file.files[0];
+ 
+      let obj = {
+        resource: "posts",
+        id: id,
+      };
+      let json = JSON.stringify(obj);
+ 
+      let form = new FormData();
+      form.append("obj", json);
+      form.append("file", this.file);
+ 
+      console.log(form.getAll("file"));
+ 
+      axios
+        .post(this.baseUpload, form, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          }, 
+        })
+        .then((result) => {
+          console.log(result);
+        });
+    },
     inserirPosts: function() {
       axios
         .post(this.baseURI, {
@@ -40,6 +68,7 @@ export default {
         .then((result) => {
           if (result.status == 201) {
             alert("Inserido com sucesso !!");
+            this.handleFileUpload(result.data.id);
           }
         })
         .catch((error) => {

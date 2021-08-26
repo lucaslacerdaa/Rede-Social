@@ -9,13 +9,13 @@ import Login from "@/views/Login.vue";
 import NotFound from "@/views/NotFound.vue";
 
 const routes = [
-  {
+  /*{
     path: "/",
     name: "Login",
     component: Login,
-  },
+  },*/
   {
-    path: "/insertPost",
+    path: "/",
     name: "InsertPost",
     component: InsertPost,
   },

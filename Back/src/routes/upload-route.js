@@ -6,7 +6,7 @@ const controller = require("../controllers/upload-controller");
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     let obj = JSON.parse(req.body.obj);
-    cb(null, "./public/uploads/posts" + obj.resource);
+    cb(null, "./public/uploads/" + obj.resource);
   },
   filename: function (req, file, cb) {
     let obj = JSON.parse(req.body.obj);
