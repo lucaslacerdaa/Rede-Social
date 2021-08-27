@@ -1,13 +1,11 @@
 <template>
   <div id="container">
-    
     <div id="inputs">
       <input type="text"     id="inputs_login" v-model="login"    placeholder="Usuário"/> <br />
       <input type="password" id="inputs_login" v-model="password" placeholder="Senha"/> <br />
     </div>
 
     <button @click="logar" id="buttonLogar">Entrar</button>
-
   </div>
 </template>
 
@@ -100,7 +98,6 @@ export default {
   margin-top: 2em;
   background-color: transparent;
 }
-
 button{
   width: 15.5em;
   height: 2.2em;
@@ -113,10 +110,8 @@ button:hover{
   cursor: pointer;
   color: white;
   background-color: rgb(103, 255, 111);
-
 }
 button:focus{
   outline: none;
 }
-
 </style>

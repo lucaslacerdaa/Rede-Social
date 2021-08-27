@@ -3,21 +3,22 @@
 
   <div id="container">
     <br/>
-    <h2>Feed de Posts:</h2><br>
+    <h2>Insira um comentário</h2><br>
 
-    Comentar: <input type="text" class="inputs_form" name="" id="1" v-model="post_coment"/> <br/>
-    Id do post: <input type="text" class="inputs_form" name="" id="0" v-model="id"/> <br/>
-    <button @click="inserirComent">Inserir</button><br/><br/><br/>
+    <input type="text" id="inputs_form" placeholder="Comentar" v-model="post_coment"/><br/>
+    <input type="text" id="inputs_form" placeholder="Id do post" v-model="id"/><br/>
+    
+    <button @click="inserirComent" id="button_inserir">Postar</button><br/><br/><br/>
 
-    <div>{{fetchComents()}}</div>
-    <div>{{fetchPosts()}}</div>
+    <div id=""> {{ fetchComents()}} </div>
+    <div id=""> {{ fetchPosts()  }} </div>
 
     <ul>
       <li v-for="post in posts" :key="post.id">
-        <div>{{fetchByIdPosts()}}</div>
-        Texto: {{ post.text }} <br/>
-        Data: {{ post.date }} <br/>
-        Horário: {{ post.time }} <br/>
+        <div>    {{fetchByIdPosts()}}  </div>
+        Texto:   {{ post.text }}       <br/>
+        Data:    {{ post.date }}       <br/>
+        Horário: {{ post.time }}       <br/>
         <img
           v-if="post.id"
           :src="'http://localhost:3000/uploads/posts/' + post.id + '?' + Math.random()"
@@ -107,16 +108,50 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+h2{
+  color: rgb(141, 141, 141);
+  font-size: 28px;
+  background-color: transparent;
+  margin-bottom: -1em;
+  padding: 1%;
 }
-ul {
-  list-style-type: none;
+#inputs_form{
+  width: 300px;
+  /* height: 27px; */
+  font-size: 16px;
+  border-top-color: transparent;
+  border-bottom-color:#24642e;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  
+  color: rgb(85, 85, 85);
+  background-color: transparent;
+  transition: background-color 0.2s;
+  margin-top: 1em;
+  
+}
+#inputs_form:hover{
+  outline: none;
+  /* margin-top:-0.2px; */
+  border-bottom:3px solid #399c48;
+}
+#inputs_form:focus{
+  outline: none;
+  border-bottom:3px solid #399c48;
+}
+#inputs_login ::placeholder{
+ color:rgba(0, 66, 0, 0.507);
+}
+
+#buttonPostar{
+  margin-top:-2em;
+  background-color: rgb(156, 255, 117);
+  transition: background-color 0.2s;
+}
+#buttonPostar:hover{
+  transition: background-color 0.2s;
+  transition: color 0.2s;
+  background-color: rgb(122, 255, 70);
 }
 </style>
 

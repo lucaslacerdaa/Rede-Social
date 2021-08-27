@@ -1,17 +1,16 @@
 
 <template>
-  
   <div id="container">
-    <h2>Seu Post:</h2>
-    <input type="text" class="inputs_form" id="textInput" v-model="text" placeholder="O que anda pensando?"/> <br/><br/>
+    <h2>Seu Post</h2>
+    <input type="text" class="inputs_form_text" id="textInput" v-model="text" placeholder="O que anda pensando?"/> <br/><br/>
     <input type="text" class="inputs_form" id="2" v-model="date" placeholder="Data"><br/><br/>
     <input type="text" class="inputs_form"  id="3" v-model="time" placeholder="Horário"/><br/><br/>
-    Imagem: <input type="file" id="file" ref="file" name="image" /> <br /><br />
+    <label id="title_img"> Imagem </label> 
+    <input type="file" id="file" ref="file" name="image"/> <br /><br />
 
     <button @click="inserirPosts" id="buttonPostar">Postar</button> <br /><br />
 
   </div>
-
 </template>
 
 <script>
@@ -90,22 +89,104 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h2{
+  color: rgb(141, 141, 141);
+  font-size: 28px;
   background-color: transparent;
   margin-top: 0em;
   padding: 4%;
 }
 #buttonPostar{
+  margin-top:-2em;
   background-color: rgb(156, 255, 117);
   transition: background-color 0.2s;
 }
+
 #buttonPostar:hover{
   transition: background-color 0.2s;
   transition: color 0.2s;
   background-color: rgb(122, 255, 70);
 }
-.input_form{
-  width: 100px;
+
+#container{
+  width: 350px;
+  height: 400px;
+  padding: 2%;
+  border-radius: 7px;
+
+  margin: auto auto auto auto;
+  margin-top: 2em;
+
+  box-shadow: 2px 0.1px 0.1px 0.1px rgb(41, 41, 41), 1em 0 2em rgb(94, 94, 94);
+
+  background-color: rgb(255, 255, 255);
 }
+.inputs_form{
+  width: 300px;
+  /* height: 27px; */
+  font-size: 16px;
+  border-top-color: transparent;
+  border-bottom-color:#24642e;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  
+  color: rgb(85, 85, 85);
+  background-color: transparent;
+  transition: background-color 0.2s;
+  /* margin-top: 2em; */
+  
+}
+.inputs_form:hover{
+  outline: none;
+  border-bottom:3px solid #399c48;
+}
+.inputs_form:focus{
+  outline: none;
+  border-bottom:3px solid #399c48;
+}
+#inputs_login ::placeholder{
+ color:rgba(0, 66, 0, 0.507);
+}
+
+.inputs_form_text{
+  width: 200px;
+  /* height: 60px; */
+  font-size: 16px;
+  border-top-color: transparent;
+  border-bottom-color:#24642e;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  
+  color: rgb(85, 85, 85);
+  background-color: transparent;
+  transition: background-color 0.2s; 
+}
+.inputs_form_text:focus{
+  outline: none;
+  border-bottom:3px solid #399c48;
+}
+.inputs_form_text:hover{
+  outline: none;
+  border-bottom:3px solid #399c48;
+}
+.inputs_form_text{
+  width: 300px;
+  /* height: 70px; */
+}
+.inputs_form_text::placeholder{
+  text-align: left;
+  /* position: relative;
+  top: em; */
+}
+#title_img{
+  position: relative;
+  left: -7.7em;
+  text-align: left;
+  background-color: transparent;
+}
+#file{
+  background-color: transparent;
+}
+
 </style>

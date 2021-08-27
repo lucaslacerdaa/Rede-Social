@@ -1,9 +1,9 @@
 <template>
   <div id="nav">
-    <router-link to="/"> Inserir Post || </router-link>
-    <router-link to="/feed"> Feed </router-link> 
-    <!--<router-link v-else to="/">Login <br></router-link>
-    <a v-if="logged" href="#" @click="logout"> Logout <br><br></a>--> 
+    <router-link v-if="logged" to="/insertPost"> Inserir Post || </router-link>
+    <router-link v-else to="/">Login <br></router-link>
+    <router-link v-if="logged" to="/feed"> Feed </router-link> 
+    <a v-if="logged" href="#" @click="logout"> Logout <br><br></a> 
     <router-view />
   </div>
 </template>
@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style>
+*{
+  font-family: 'Poppins', sans-serif;
+}
 #app {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   -webkit-font-smoothing: antialiased;
