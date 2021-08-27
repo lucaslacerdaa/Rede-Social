@@ -75,13 +75,10 @@ export default {
   border-bottom-color:#24642e;
   border-left-color: transparent;
   border-right-color: transparent;
-  
   color: rgb(85, 85, 85);
   background-color: transparent;
   transition: background-color 0.2s;
-
   margin-top: 2em;
-  
 }
 #inputs_loginput:hover{
   outline: none;

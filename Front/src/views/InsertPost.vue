@@ -95,6 +95,7 @@ h2{
   font-size: 28px;
   background-color: transparent;
   margin-top: 0em;
+  margin-bottom: 1em;
   padding: 4%;
 }
 #buttonPostar{
@@ -110,6 +111,8 @@ h2{
 }
 
 #container{
+  position: fixed;
+  left: 50em;
   width: 350px;
   height: 400px;
   padding: 2%;
@@ -183,6 +186,7 @@ h2{
   position: relative;
   left: -7.7em;
   text-align: left;
+  color: rgb(141, 141, 141);
   background-color: transparent;
 }
 #file{

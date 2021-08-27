@@ -1,6 +1,6 @@
 
 <template>
-
+<div id="global">
   <div id="container">
     <br/>
     <h2>Insira um comentário</h2><br>
@@ -9,7 +9,8 @@
     <input type="text" id="inputs_form" placeholder="Id do post" v-model="id"/><br/>
     
     <button @click="inserirComent" id="button_inserir">Postar</button><br/><br/><br/>
-
+    
+  <div id="post">
     <div id=""> {{ fetchComents()}} </div>
     <div id=""> {{ fetchPosts()  }} </div>
 
@@ -37,9 +38,39 @@
         <br/>
       </li>
     </ul>
-
   </div>
-
+    <!-- <div class="divisao">
+      <div id="posts"> {{ fetchComents()}} </div>
+      <div id="posts"> {{ fetchPosts()  }} </div>
+      <div id="posts">
+        <ul>
+          <li v-for="post in posts" :key="post.id">
+            <div>    {{fetchByIdPosts()}}  </div>
+            Texto:   {{ post.text }}       <br/>
+            Data:    {{ post.date }}       <br/>
+            Horário: {{ post.time }}       <br/>
+            <img
+              v-if="post.id"
+              :src="'http://localhost:3000/uploads/posts/' + post.id + '?' + Math.random()"
+              width="200"
+              height="150"
+              alt="Nada"
+              srcset=""
+            />
+            <ul>
+                <li v-for="coment in coments" :key="coment.id">
+                  <div v-if="coment.postId === post.id">
+                    Comentário: {{ coment.post_coment }} <br/> 
+                  </div> 
+                </li>
+            </ul>
+            <br/>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+  </div>
+</div>
 </template>
 
 <script>
@@ -115,6 +146,13 @@ h2{
   margin-bottom: -1em;
   padding: 1%;
 }
+/* .divisao{
+  margin-left: -6000rem;
+} */
+/* #container{
+  position: fixed;
+  left: 50em;
+} */
 #inputs_form{
   width: 300px;
   /* height: 27px; */
@@ -128,7 +166,6 @@ h2{
   background-color: transparent;
   transition: background-color 0.2s;
   margin-top: 1em;
-  
 }
 #inputs_form:hover{
   outline: none;
@@ -152,6 +189,10 @@ h2{
   transition: background-color 0.2s;
   transition: color 0.2s;
   background-color: rgb(122, 255, 70);
+}
+#posts{
+  position: absolute;
+  left: 20em;
 }
 </style>
 
