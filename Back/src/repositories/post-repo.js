@@ -23,17 +23,6 @@ exports.findAll = async () => {
   return result;
 };
 
-/*
-exports.findOne = async (id) => {
-  const result = await Product.findOne({
-    where: {
-      id: id,
-    },
-  });
-  return result;
-};
-*/
-
 exports.findOne = async (id) => {
   return await Post.findByPk(id, {
     include: [
@@ -51,27 +40,3 @@ exports.findOne = async (id) => {
     });
 };
 
- /*exports.findByNameAndPrice = async (name, price) => {
-  const result = await Product.findAll({
-    where: {
-      name: name,
-      price: price,
-    },
-  });
- 
-  const result = await Product.findAll({
-    where: {
-      [Op.and]: [
-        { name: name },
-        {
-          price: {
-            [Op.gte]: price,
-          },
-        },
-      ],
-    },
-  });
-  
-
-  return result;
-};*/

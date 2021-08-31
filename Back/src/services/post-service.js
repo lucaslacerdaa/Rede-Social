@@ -13,10 +13,6 @@ class PostService {
     return postRepo.findOne(id);
   }
 
-  //getByNameAndPrice(name, price) {
-  //  return productRepo.findByNameAndPrice(name, price);
-  //}
-
 }
 
 module.exports = PostService;

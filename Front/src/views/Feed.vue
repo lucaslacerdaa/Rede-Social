@@ -39,36 +39,7 @@
       </li>
     </ul>
   </div>
-    <!-- <div class="divisao">
-      <div id="posts"> {{ fetchComents()}} </div>
-      <div id="posts"> {{ fetchPosts()  }} </div>
-      <div id="posts">
-        <ul>
-          <li v-for="post in posts" :key="post.id">
-            <div>    {{fetchByIdPosts()}}  </div>
-            Texto:   {{ post.text }}       <br/>
-            Data:    {{ post.date }}       <br/>
-            Horário: {{ post.time }}       <br/>
-            <img
-              v-if="post.id"
-              :src="'http://localhost:3000/uploads/posts/' + post.id + '?' + Math.random()"
-              width="200"
-              height="150"
-              alt="Nada"
-              srcset=""
-            />
-            <ul>
-                <li v-for="coment in coments" :key="coment.id">
-                  <div v-if="coment.postId === post.id">
-                    Comentário: {{ coment.post_coment }} <br/> 
-                  </div> 
-                </li>
-            </ul>
-            <br/>
-          </li>
-        </ul>
-      </div>
-    </div> -->
+   
   </div>
 </div>
 </template>
@@ -146,13 +117,6 @@ h2{
   margin-bottom: -1em;
   padding: 1%;
 }
-/* .divisao{
-  margin-left: -6000rem;
-} */
-/* #container{
-  position: fixed;
-  left: 50em;
-} */
 #inputs_form{
   width: 300px;
   /* height: 27px; */
@@ -193,6 +157,9 @@ h2{
 #posts{
   position: absolute;
   left: 20em;
+}
+ul {
+  list-style-type: none;
 }
 </style>
 

@@ -10,12 +10,6 @@ exports.getById = async (req, res) => {
   res.json(await postService.getById(req.params.id));
 };
 
-//exports.getByNameAndPrice = async (req, res) => {
-//  res.json(
-//  await productService.getByNameAndPrice(req.query.name, req.query.price)
-//  );
-//};
-
 exports.post = async (req, res) => {
   if (req.body.text.length < 2) {
     res.status(400).send();
